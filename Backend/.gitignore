@@ -1,0 +1,5 @@
+#ignore environment variable
+.env 
+
+#ignore npm packege files
+node_modules/
