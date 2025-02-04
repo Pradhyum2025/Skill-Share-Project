@@ -10,10 +10,12 @@ import Home from './components/core/Home/Home.jsx'
 import OTP from './components/core/Auth/OTP.jsx'
 import { Provider, useSelector } from 'react-redux';
 import appStore from './store/reducer/index.js';
-<<<<<<< HEAD
 import DashBoardRoute from './DashBoardRoute.jsx';
-=======
->>>>>>> 428ba9dfc8708b3c3a8820e623bfd3793c30a4f7
+import CoursePage from './components/core/Course/MainCoursePage/CoursePage.jsx';
+import CreateCourse from './components/core/Course/Instructor/CreateCourse.jsx'
+import ShowCourseDetails from './components/core/Course/MainCoursePage/ShowCourseDetails.jsx';
+import MyCourse from './components/core/Course/MyCourse.jsx';
+
 
 
 const router = createBrowserRouter  ([
@@ -23,15 +25,18 @@ const router = createBrowserRouter  ([
     children: [
       { path: '/', element: <Home /> },
       { path: '/signup', element: <Signup /> },
+      { path: '/course', element: <CoursePage /> },
+      { path: '/show/:courseId', element: <ShowCourseDetails /> },
       { path: '/otp', element: <OTP /> },
     ]
-<<<<<<< HEAD
   } ,
   {
     path: '/dashbord',
-    element: <DashBoardRoute />
-=======
->>>>>>> 428ba9dfc8708b3c3a8820e623bfd3793c30a4f7
+    element: <DashBoardRoute />,
+    children:[
+      { path: '/dashbord/createCourse', element: <CreateCourse/> },
+      { path: '/dashbord', element: <MyCourse /> ,},
+    ]
   }
 ])
 createRoot(document.getElementById('root')).render(

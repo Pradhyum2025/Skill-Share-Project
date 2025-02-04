@@ -15,6 +15,7 @@ import connectCloudinary from "./config/connectCloudinary.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import bodyParser from "body-parser";
+import courseRoutes from "./routes/Course.js";
 
 
 //load env file
@@ -45,6 +46,7 @@ connectCloudinary();
 
 //all routers
 app.use('/auth',authRoutes);
+app.use('/course',courseRoutes);
 
 
 //Def route
