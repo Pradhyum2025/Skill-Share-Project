@@ -10,7 +10,10 @@ import Home from './components/core/Home/Home.jsx'
 import OTP from './components/core/Auth/OTP.jsx'
 import { Provider, useSelector } from 'react-redux';
 import appStore from './store/reducer/index.js';
+<<<<<<< HEAD
 import DashBoardRoute from './DashBoardRoute.jsx';
+=======
+>>>>>>> 428ba9dfc8708b3c3a8820e623bfd3793c30a4f7
 
 
 const router = createBrowserRouter  ([
@@ -22,10 +25,13 @@ const router = createBrowserRouter  ([
       { path: '/signup', element: <Signup /> },
       { path: '/otp', element: <OTP /> },
     ]
+<<<<<<< HEAD
   } ,
   {
     path: '/dashbord',
     element: <DashBoardRoute />
+=======
+>>>>>>> 428ba9dfc8708b3c3a8820e623bfd3793c30a4f7
   }
 ])
 createRoot(document.getElementById('root')).render(
