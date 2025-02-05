@@ -96,7 +96,7 @@ const Navbar = () => {
             <li
               className={`w-[4.5rem] text-center rounded hover:bg-gray-100 text-black text-[.95rem] font-bold ${currLocation === '/contactUs' ? 'scale-110 text-indigo-600 font-[900]' : ''}`}
             >
-              Contect
+              Contact
             </li>
           </Link>
         </ul>

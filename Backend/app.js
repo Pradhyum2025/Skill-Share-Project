@@ -3,6 +3,12 @@ const app = express();
 
 //Imported  routes
 import authRoutes from "./routes/User.js";
+import courseRoutes from "./routes/Course.js";
+import categoryRoutes from "./routes/Category.js";
+import profileRoutes from "./routes/Profile.js";
+import sectionRoutes from "./routes/Section.js";
+import subSectionRoutes from "./routes/SubSection.js";
+import reviewRoutes from "./routes/Review.js";
 
 
 //Imported ConectedDB
@@ -15,7 +21,7 @@ import connectCloudinary from "./config/connectCloudinary.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import bodyParser from "body-parser";
-import courseRoutes from "./routes/Course.js";
+
 
 
 //load env file
@@ -47,6 +53,14 @@ connectCloudinary();
 //all routers
 app.use('/auth',authRoutes);
 app.use('/course',courseRoutes);
+app.use('/category',categoryRoutes);
+app.use('/profile',profileRoutes);
+app.use('/section',sectionRoutes);
+app.use('/subSection',subSectionRoutes);
+app.use('/review',reviewRoutes);
+app.use('/resetPassword',resetPasswordRoutes)
+app.use('/bag',bagRoutes)
+app.use('/instructor',instructorRoutes)
 
 
 //Def route
