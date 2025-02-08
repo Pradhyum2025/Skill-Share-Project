@@ -15,7 +15,8 @@ import CoursePage from './components/core/Course/MainCoursePage/CoursePage.jsx';
 import CreateCourse from './components/core/Course/Instructor/CreateCourse.jsx'
 import ShowCourseDetails from './components/core/Course/MainCoursePage/ShowCourseDetails.jsx';
 import MyCourse from './components/core/Course/MyCourse.jsx';
-
+import UserProfile from './components/core/User/Profile.jsx';
+import {BagPage} from './components/core/User/BagPage.jsx'
 
 
 const router = createBrowserRouter  ([
@@ -28,6 +29,7 @@ const router = createBrowserRouter  ([
       { path: '/course', element: <CoursePage /> },
       { path: '/show/:courseId', element: <ShowCourseDetails /> },
       { path: '/otp', element: <OTP /> },
+      { path: '/cart', element: <BagPage /> },
     ]
   } ,
   {
@@ -36,6 +38,8 @@ const router = createBrowserRouter  ([
     children:[
       { path: '/dashbord/createCourse', element: <CreateCourse/> },
       { path: '/dashbord', element: <MyCourse /> ,},
+      { path: '/dashbord/myProfile', element: <UserProfile/> },
+      { path: '/dashbord/cart', element: <BagPage /> }, 
     ]
   }
 ])

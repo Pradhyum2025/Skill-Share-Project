@@ -9,6 +9,9 @@ import profileRoutes from "./routes/Profile.js";
 import sectionRoutes from "./routes/Section.js";
 import subSectionRoutes from "./routes/SubSection.js";
 import reviewRoutes from "./routes/Review.js";
+import resetPasswordRoutes from "./routes/ResetPassword.js";
+import bagRoutes from "./routes/Bag.js";
+import instructorRoutes from './routes/Instructor.js'
 
 
 //Imported ConectedDB
