@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { FiX } from 'react-icons/fi';
 import SearchBar from '../SearchPage';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCategories } from '../../../../operations/category';
+// import { getAllCategories } from '../../../../operations/category';
 import { getAllCourses, getFilteredCourses } from '../../../../operations/course';
+import { getAllCategories } from '../../../../operations/category';
 
 
 export const FilterContainer = () => {
@@ -16,7 +17,7 @@ export const FilterContainer = () => {
 
   //Fetch existing category on intial render
   useEffect(() => {
-    // getAllCategories(dispatch);
+    getAllCategories(dispatch);
   }, [])
 
   const categories = useSelector(store => store.category);

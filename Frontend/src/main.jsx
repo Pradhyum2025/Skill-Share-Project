@@ -17,7 +17,10 @@ import ShowCourseDetails from './components/core/Course/MainCoursePage/ShowCours
 import MyCourse from './components/core/Course/MyCourse.jsx';
 import UserProfile from './components/core/User/Profile.jsx';
 import {BagPage} from './components/core/User/BagPage.jsx'
-
+import Student_ViewCourseContent from './components/core/Course/Student/ViewCourseContent.jsx';
+import AboutUs from './components/core/other/About.jsx'
+import ContactUs  from './components/core/other/ContactUs.jsx'
+import { Instructor_ShowCourseDetails } from './components/core/Course/Instructor/ShowCourseDetails.jsx';
 
 const router = createBrowserRouter  ([
   {
@@ -30,7 +33,11 @@ const router = createBrowserRouter  ([
       { path: '/show/:courseId', element: <ShowCourseDetails /> },
       { path: '/otp', element: <OTP /> },
       { path: '/cart', element: <BagPage /> },
+      { path: '/about', element: <AboutUs /> },
+      { path: '/contactUs', element: <ContactUs /> },
+      { path: '/student/course/show/:courseId', element: <Student_ViewCourseContent /> },
     ]
+
   } ,
   {
     path: '/dashbord',
@@ -40,6 +47,7 @@ const router = createBrowserRouter  ([
       { path: '/dashbord', element: <MyCourse /> ,},
       { path: '/dashbord/myProfile', element: <UserProfile/> },
       { path: '/dashbord/cart', element: <BagPage /> }, 
+      { path: '/dashbord/show/:courseId', element: <Instructor_ShowCourseDetails /> },
     ]
   }
 ])

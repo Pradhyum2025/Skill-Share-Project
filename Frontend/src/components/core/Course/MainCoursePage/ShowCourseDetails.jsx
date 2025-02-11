@@ -5,6 +5,7 @@ import { getCourseDetailsForView } from "../../../../operations/course";
 import { useDispatch, useSelector } from "react-redux";
 import InstructorShowCourseProfile from "../CourseInstructorContainer";
 import InstructorShowCourseMainCard from "../ShowCourseMainCard";
+import Review from "../../review/Review";
 
 
 export default function ShowCourseDetails() {
