@@ -24,6 +24,7 @@ import connectCloudinary from "./config/connectCloudinary.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import bodyParser from "body-parser";
+import paymentRoutes from "./routes/Payment.js";
 
 
 
@@ -63,7 +64,8 @@ app.use('/subSection',subSectionRoutes);
 app.use('/review',reviewRoutes);
 app.use('/resetPassword',resetPasswordRoutes)
 app.use('/bag',bagRoutes)
-app.use('/instructor',instructorRoutes)
+app.use('/instructor',instructorRoutes);
+app.use('/payment',paymentRoutes);
 
 
 //Def route

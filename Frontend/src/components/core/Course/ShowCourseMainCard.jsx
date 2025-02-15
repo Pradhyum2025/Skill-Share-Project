@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import BagBtn from '../../Common/BagBtns';
 import { BiSolidPurchaseTag } from "react-icons/bi";
 import { PiCurrencyInrFill } from 'react-icons/pi';
+import BuyNowBtn from '../payment/BuyNowBtn'
 
 export default function InstructorShowCourseMainCard({singleCourse,courseId,isShowCourse}) {4
   const currUser = useSelector(store=>store.auth);

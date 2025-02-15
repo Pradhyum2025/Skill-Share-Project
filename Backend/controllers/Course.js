@@ -5,7 +5,8 @@ import { uploadImageToCloudinary } from '../utils/imageUploader.js'
 import dotenv, { populate } from 'dotenv'
 import mongoose from 'mongoose'
 import { mailSender } from '../utils/mailSender.js'
-// import { CourseStatusEmail } from '../models/mailTemplates/CourseStatusChangedMailTemplate.js'
+import { CourseStatusEmail } from '../models/mailTemplates/CourseStatusChangedMailTemplate.js'
+
 dotenv.config()
 
 

@@ -28,8 +28,6 @@ export const createCategory = async (req, res) => {
     }
 
     let response = await Category.create(categoryPayload);
-
-    console.log(response)
     
     return res.status(200).json({
       success: true,

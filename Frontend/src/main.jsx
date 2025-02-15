@@ -21,6 +21,11 @@ import Student_ViewCourseContent from './components/core/Course/Student/ViewCour
 import AboutUs from './components/core/other/About.jsx'
 import ContactUs  from './components/core/other/ContactUs.jsx'
 import { Instructor_ShowCourseDetails } from './components/core/Course/Instructor/ShowCourseDetails.jsx';
+import CategoryCourse from './components/core/category/CategoryCourse.jsx';
+import InstructorPage from './components/core/User/InstructorPage.jsx';
+import Categories from './components/core/category/Categories.jsx';
+import CategoryCreation from './components/core/category/createCategory.jsx';
+import isUserAdmin from './loaders/loader.js';
 
 const router = createBrowserRouter  ([
   {
@@ -44,10 +49,14 @@ const router = createBrowserRouter  ([
     element: <DashBoardRoute />,
     children:[
       { path: '/dashbord/createCourse', element: <CreateCourse/> },
-      { path: '/dashbord', element: <MyCourse /> ,},
+      { path: '/dashbord', element: <MyCourse /> ,loader:isUserAdmin},
       { path: '/dashbord/myProfile', element: <UserProfile/> },
       { path: '/dashbord/cart', element: <BagPage /> }, 
       { path: '/dashbord/show/:courseId', element: <Instructor_ShowCourseDetails /> },
+      { path: '/dashbord/createCategory', element: <CategoryCreation/> },
+      { path: '/dashbord/instructor', element: <InstructorPage/> } ,
+      { path: '/dashbord/categories', element: <Categories/> } ,
+      { path: '/dashbord/getCourseByCategory/:categoryId', element: <CategoryCourse/> }
     ]
   }
 ])
