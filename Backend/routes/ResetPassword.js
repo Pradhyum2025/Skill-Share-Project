@@ -1,5 +1,5 @@
 import express from 'express'
-import { resetPassword, resetPasswordToken } from '../controllers/ResetPassword.js';
+import { resetPassword, resetPasswordToken } from '../controllers/resetPassword.js';
 const resetPasswordRoutes = express.Router();
 
 //Generate resetPassword token

@@ -1,7 +1,6 @@
 import { populate } from "dotenv";
 import { Course } from "../models/course.js";
-import { Section } from "../models/section.js";
-import { User } from "../models/user.js";
+import { Section } from "../models/section.js";;
 import { SubSection } from "../models/subsection.js";
 import mongoose from "mongoose";
 

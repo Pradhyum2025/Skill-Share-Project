@@ -1,6 +1,6 @@
 import express from 'express'
 import { isAuth, isStudent } from '../middlewares/Auth.js';
-import { createReview, deleteReview, getAvgRating, reviewsOfCourse } from '../controllers/Reviews.js';
+import { createReview, deleteReview, getAvgRating, reviewsOfCourse } from '../controllers/reviews.js';
 const reviewRoutes = express.Router();
 
 //Create review

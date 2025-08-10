@@ -1,5 +1,5 @@
 import express from 'express'
-import { deleteAccount, getUserDetails, updateProfile, updateProfilePicture } from '../controllers/Profile.js';
+import { deleteAccount, getUserDetails, updateProfile, updateProfilePicture } from '../controllers/profile.js';
 import { isAuth, isStudent } from '../middlewares/Auth.js';
 const profileRoutes = express.Router();
 

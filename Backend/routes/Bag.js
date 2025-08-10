@@ -1,5 +1,5 @@
 import express from 'express'
-import { addToBag, getMyBag, removeToBag } from '../controllers/Bag.js';
+import { addToBag, getMyBag, removeToBag } from '../controllers/bag.js';
 import { isAuth, isStudent } from '../middlewares/Auth.js';
 const bagRoutes = express.Router();
 

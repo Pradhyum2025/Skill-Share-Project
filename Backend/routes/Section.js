@@ -1,6 +1,6 @@
 import express from 'express'
 import {isAuth, isInstructor } from '../middlewares/Auth.js';
-import { createSection, deleteSection, updateSection } from '../controllers/Section.js';
+import { createSection, deleteSection, updateSection } from '../controllers/section.js';
 const sectionRoutes = express.Router();
 
 //create section

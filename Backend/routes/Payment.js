@@ -1,6 +1,6 @@
 import express from 'express'
 import { isAuth,isStudent } from '../middlewares/Auth.js';
-import { capturePayment, varifySignature } from '../controllers/Payment.js';
+import { capturePayment, varifySignature } from '../controllers/payment.js';
 const paymentRoutes = express.Router();
 
 //capture payement
