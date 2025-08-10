@@ -1,5 +1,5 @@
 import express from 'express'
-import {isAuth, isInstructor } from '../middlewares/Auth.js';
+import {isAuth, isInstructor } from '../middlewares/auth.js';
 import { createSection, deleteSection, updateSection } from '../controllers/section.js';
 const sectionRoutes = express.Router();
 

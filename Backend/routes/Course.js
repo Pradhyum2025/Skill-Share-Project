@@ -1,5 +1,5 @@
 import express from 'express'
-import { isAdmin, isAuth, isInstructor } from '../middlewares/Auth.js';
+import { isAdmin, isAuth, isInstructor } from '../middlewares/auth.js';
 import { createCourse, getAllCourses, getCourseDetailsForView, getCourseDetailsofUser, getCoursesByAdmin, getFilteredCourses, getUserAllCourse, setCourseStatus } from '../controllers/Course.js';
 const courseRoutes = express.Router();
 
