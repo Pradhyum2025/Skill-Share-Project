@@ -1,10 +1,10 @@
 import { Section } from "../models/section.js";
-import { SubSection } from "../models/subsection.js";
 import { Course } from "../models/course.js";
 import { uploadImageToCloudinary } from "../utils/imageUploader.js";
 import dotenv from 'dotenv';
 dotenv.config();
 import mongoose from "mongoose";
+import { SubSection } from "../models/subsection.js";
 
 //Create subsection handler function
 export const createSubSection = async (req, res) => {
