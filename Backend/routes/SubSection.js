@@ -1,6 +1,6 @@
 import express from "express"
 import { isAuth, isInstructor } from "../middlewares/Auth.js";
-import { createSubSection, deleteSubSection, updateSubSection } from "../controllers/SubSection.js";
+import { createSubSection, deleteSubSection, updateSubSection } from "../controllers/Subsection.js";
 const subSectionRoutes = express.Router();
 
 //create subSection
