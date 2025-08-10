@@ -1,6 +1,6 @@
 import express from 'express'
 import { addToBag, getMyBag, removeToBag } from '../controllers/bag.js';
-import { isAuth, isStudent } from '../middlewares/auth.js';
+import { isAuth, isStudent } from '../middlewares/Auth.js';
 const bagRoutes = express.Router();
 
 //Add to cart

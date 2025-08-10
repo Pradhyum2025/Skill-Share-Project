@@ -2,16 +2,16 @@ import express from "express";
 const app = express();
 
 //Imported  routes
-import authRoutes from "./routes/User.js";
-import courseRoutes from "./routes/Course.js";
-import categoryRoutes from "./routes/Category.js";
-import profileRoutes from "./routes/Profile.js";
-import sectionRoutes from "./routes/Section.js";
-import subSectionRoutes from "./routes/SubSection.js";
-import reviewRoutes from "./routes/Review.js";
-import resetPasswordRoutes from "./routes/ResetPassword.js";
-import bagRoutes from "./routes/Bag.js";
-import instructorRoutes from './routes/Instructor.js'
+import authRoutes from "./routes/user.js";
+import courseRoutes from "./routes/course.js";
+import categoryRoutes from "./routes/category.js";
+import profileRoutes from "./routes/profile.js";
+import sectionRoutes from "./routes/section.js";
+import subSectionRoutes from "./routes/subsection.js";
+import reviewRoutes from "./routes/review.js";
+import resetPasswordRoutes from "./routes/resetPassword.js";
+import bagRoutes from "./routes/bag.js";
+import instructorRoutes from './routes/instructor.js'
 
 
 //Imported ConectedDB
@@ -24,7 +24,7 @@ import connectCloudinary from "./config/connectCloudinary.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import bodyParser from "body-parser";
-import paymentRoutes from "./routes/Payment.js";
+import paymentRoutes from "./routes/payment.js";
 
 
 

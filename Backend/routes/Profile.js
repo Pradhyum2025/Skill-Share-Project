@@ -1,6 +1,6 @@
 import express from 'express'
 import { deleteAccount, getUserDetails, updateProfile, updateProfilePicture } from '../controllers/profile.js';
-import { isAuth, isStudent } from '../middlewares/auth.js';
+import { isAuth, isStudent } from '../middlewares/Auth.js';
 const profileRoutes = express.Router();
 
 //Get curr user details
