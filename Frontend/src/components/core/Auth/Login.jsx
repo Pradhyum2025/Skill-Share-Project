@@ -61,7 +61,7 @@ export default function Login() {
             disabled={currUser.email}
             type="password" 
             name="password" 
-            id="password" placeholder="••••••••" class="bg-black border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-700 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400  placeholder-gray-400 text-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+            id="password" placeholder="••••••••" class="bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-700 focus:border-primary-600 block w-full p-2.5   placeholder-gray-400 text-gray-600  "
               {...register("password", { required: true, maxLength: 20 })}
               />
               {/* ---- Error handling ---- */}

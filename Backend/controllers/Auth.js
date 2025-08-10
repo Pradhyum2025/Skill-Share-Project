@@ -17,7 +17,6 @@ export const sendOTP = async (req, res) => {
   try {
     // Fetch email from request ki body
     let { email } = req.body
-    console.log(email)
     if (!email) {
       return res.status(400).json({
         success: false,
@@ -73,8 +72,6 @@ export const signup = async (req, res) => {
       contact,
       otp
     } = req.body;
-  
-    console.log(req.body);
 
     const actulOtp = parseInt(otp, 10);
     //Validate all feilds are here or not
@@ -111,7 +108,6 @@ export const signup = async (req, res) => {
     //Find most recent OTP stored for the user 
     const recentOTP = await OTP.findOne({ email: email }).sort({ createdAt: -1 }).limit(1);
     //validate otp
-    console.log(recentOTP)
     if (!recentOTP) {
       return res.status(400).json({
         success: false,

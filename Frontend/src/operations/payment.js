@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "../helper/axiosInstance";
 import toast from "react-hot-toast";
 import { bagSliceAction } from "../store/slices/bagSlice";
 
@@ -31,7 +31,7 @@ export const capturePayment = async (courseId, token) => {
 
  // After script load make order reuest
   try {
-    const res = await axios.get(`http://localhost:8080/payment/${courseId}`, {
+    const res = await axiosInstance.get(`/payment/${courseId}`, {
       headers: {
         'Authorisation': `Bearer ${token}`
       }
@@ -55,7 +55,7 @@ export const capturePayment = async (courseId, token) => {
 export const verifyPayment = async (navigate,dispatch,bodyData,token) => {
   const toastId = toast.loading("Verifying Payment...");
   try {
-    const res = await axios.post(`http://localhost:8080/payment`, bodyData, {
+    const res = await axiosInstance.post(`/payment`, bodyData, {
       headers: {
         'Authorisation': `Bearer ${token}`
       }

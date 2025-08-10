@@ -1,12 +1,12 @@
 import toast from "react-hot-toast";
 import { bagSliceAction } from "../store/slices/bagSlice";
-import axios from "axios";
+import axiosInstance from "../helper/axiosInstance";
 
 //Add to cart
 export const getMyBag = async (dispatch,token) => {
 
   try {
-    const res = await axios.get('http://localhost:8080/bag',{
+    const res = await axiosInstance.get('/bag',{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -25,7 +25,7 @@ export const getMyBag = async (dispatch,token) => {
 export const addToBag = async (dispatch,course,token,setFetching) => {
   try {
     setFetching(()=>true)
-    const res = await axios.get(`http://localhost:8080/bag/addToBag/${course._id}`,{
+    const res = await axiosInstance.get(`/bag/addToBag/${course._id}`,{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -48,7 +48,7 @@ export const addToBag = async (dispatch,course,token,setFetching) => {
 export const removeToBag = async (dispatch,courseId,token,setFetching) => {
   try {
     setFetching(()=>true)
-    const res = await axios.get(`http://localhost:8080/bag/removeToBag/${courseId}`,{
+    const res = await axiosInstance.get(`/bag/removeToBag/${courseId}`,{
       headers:{
         'Authorisation':`Bearer ${token}`
       }

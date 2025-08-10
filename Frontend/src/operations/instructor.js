@@ -1,11 +1,12 @@
 import toast from "react-hot-toast";
 import { insructorSliceAction } from "../store/slices/insructor";
-import axios from "axios";
+import axiosInstance from "../helper/axiosInstance";
+
 
 //Get all instructor
 export const getAllInstructor = async(dispatch,token)=>{
   try{
-    const res = await axios.get('http://localhost:8080/instructor',{
+    const res = await axiosInstance.get('/instructor',{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -25,7 +26,7 @@ export const getAllInstructor = async(dispatch,token)=>{
 export const changeInstructorAccountStatus = async(dispatch,instructorId,token)=>{
   const toastId = toast.loading('Updating....')
   try{
-    const res = await axios.get(`http://localhost:8080/instructor/${instructorId}`,{
+    const res = await axiosInstance.get(`/instructor/${instructorId}`,{
       headers: {
         'Authorisation':`Bearer ${token}`
       }

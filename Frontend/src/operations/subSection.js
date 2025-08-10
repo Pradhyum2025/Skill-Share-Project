@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "../helper/axiosInstance";
 import toast from "react-hot-toast";
 import { courseSliceAction } from "../store/slices/courseSlice";
 import { fetchSliceAction } from "../store/slices/fetchSlice";
@@ -7,7 +7,7 @@ import { fetchSliceAction } from "../store/slices/fetchSlice";
 export const createSubSection = async (dispatch,navigate,subSectionData,courseId,sectionId,token)=>{
   try {
      dispatch(fetchSliceAction.serializeFetching());
-      const res = await axios.post(`http://localhost:8080/subSection/${courseId}/${sectionId}`, subSectionData, {
+      const res = await axiosInstance.post(`/subSection/${courseId}/${sectionId}`, subSectionData, {
       headers:{
         'Authorisation':`Bearer ${token}`,
         'Content-Type':'multipart/form-data'
@@ -33,7 +33,7 @@ export const createSubSection = async (dispatch,navigate,subSectionData,courseId
 export const deleteSubSection = async (dispatch,courseId,sectionId,subSectionId,token)=>{
   try {
     dispatch(fetchSliceAction.serializeFetching());
-      const res = await axios.delete(`http://localhost:8080/subSection/${courseId}/${sectionId}/${subSectionId}`, {
+      const res = await axiosInstance.delete(`/subSection/${courseId}/${sectionId}/${subSectionId}`, {
       headers:{
         'Authorisation':`Bearer ${token}`
       }
@@ -61,7 +61,7 @@ export const deleteSubSection = async (dispatch,courseId,sectionId,subSectionId,
 export const editSubSection = async (dispatch,navigate,updatedData,courseId,sectionId,subSectionId,token)=>{
   try {
     dispatch(fetchSliceAction.serializeFetching());
-      const res = await axios.patch(`http://localhost:8080/subSection/${courseId}/${sectionId}/${subSectionId}`, updatedData, {
+      const res = await axiosInstance.patch(`/subSection/${courseId}/${sectionId}/${subSectionId}`, updatedData, {
         headers:{
           'Authorisation':`Bearer ${token}`,
           'Content-Type':'multipart/form-data'

@@ -1,9 +1,10 @@
-import axios from "axios";
+import axiosInstance from "../helper/axiosInstance"
+
 
 //Get my course
 export const getAvgRating = async (courseId,setAvgRating) => {
   try {
-    const res = await axios.get(`http://localhost:8080/review/${courseId}`)
+    const res = await axiosInstance.get(`/review/${courseId}`)
     
     if (res.data && res.data.success) {
       // console.log("GET AVG RAting RESPONSE --->>>", res)

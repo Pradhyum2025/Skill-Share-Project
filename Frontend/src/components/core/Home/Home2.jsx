@@ -28,12 +28,12 @@ export default function Home2() {
         <div className='w-[100%] flex flex-col w-[50%] gap-4'>
 
           {/* Button-1 */}
-          <button className='text-white btn bg-black mt-3 md:mt-5 border-none hover:bg-indigo-500 font-[700] text-[1rem]'>
+          <button className='text-white btn bg-indigo-600 mt-3 md:mt-5 border-none hover:bg-indigo-500 font-[700] text-[1rem]'>
             Explore courses
           </button>
 
           {/* Button-2 */}
-          <button className='text-white btn bg-black mt-3 md:mt-5 border-none hover:bg-indigo-500 font-[700] text-[1rem]'>
+          <button className='text-white btn bg-indigo-600 mt-3 md:mt-5 border-none hover:bg-indigo-500 font-[700] text-[1rem]'>
             Learn more
           </button>
         </div>

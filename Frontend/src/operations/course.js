@@ -1,4 +1,4 @@
-import axios from "axios"
+import axiosInstance from "../helper/axiosInstance";
 import { fetchSliceAction } from "../store/slices/fetchSlice"
 import toast from "react-hot-toast";
 import { courseSliceAction } from "../store/slices/courseSlice";
@@ -7,7 +7,7 @@ import { courseSliceAction } from "../store/slices/courseSlice";
 export const createCourse = async (dispatch, navigate, courseData,token) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.post('http://localhost:8080/course', courseData, {
+    const res = await axiosInstance.post('/course', courseData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         'Authorisation':`Bearer ${token}`
@@ -33,7 +33,7 @@ export const createCourse = async (dispatch, navigate, courseData,token) => {
 export const getAllCourses = async (dispatch) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.get('http://localhost:8080/course')
+    const res = await axiosInstance.get('/course')
     dispatch(fetchSliceAction.deserializeFetching());
     if (res.data && res.data.success) {
       // console.log("GET ALL COURSE RESPONSE --->>>", res)
@@ -53,7 +53,7 @@ export const getAllCourses = async (dispatch) => {
 export const getMyCourse = async (dispatch,token) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.get('http://localhost:8080/course/user',{
+    const res = await axiosInstance.get('/course/user',{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -77,7 +77,7 @@ export const getMyCourse = async (dispatch,token) => {
 export const getSingleCourse = async (dispatch,courseId,token) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.get(`http://localhost:8080/course/${courseId}`,{
+    const res = await axiosInstance.get(`/course/${courseId}`,{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -111,7 +111,7 @@ export const  formatDate = (timestamp) =>{
 export const getCourseDetailsForView = async(dispatch,courseId)=>{
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.get(`http://localhost:8080/course/view/${courseId}`,{
+    const res = await axiosInstance.get(`/course/view/${courseId}`,{
     });
     dispatch(fetchSliceAction.deserializeFetching());
     if (res.data && res.data.success) {
@@ -130,7 +130,7 @@ export const getCourseDetailsForView = async(dispatch,courseId)=>{
 export const getFilteredCourses = async(dispatch,categoryId)=>{
 
   try {
-    const res = await axios.get(`http://localhost:8080/course/filter/${categoryId}`,{
+    const res = await axiosInstance.get(`/course/filter/${categoryId}`,{
     });
     if (res.data && res.data.success) {
       // console.log("GET Filter Course Response --->>>", res)
@@ -149,7 +149,7 @@ export const getFilteredCourses = async(dispatch,categoryId)=>{
 export const getCoursesByAdmin = async(dispatch,categoryId,token)=>{
 
   try {
-    const res = await axios.get(`http://localhost:8080/course/filter/admin/${categoryId}`,{
+    const res = await axiosInstance.get(`/course/filter/admin/${categoryId}`,{
       headers: {
         'Authorisation':`Bearer ${token}`
       }
@@ -173,7 +173,7 @@ export const setCourseStatus = async(dispatch,courseId,token)=>{
   const toastId = toast.loading('Updating status....')
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.get(`http://localhost:8080/course/status/${courseId}`,{
+    const res = await axiosInstance.get(`/course/status/${courseId}`,{
       headers: {
         'Authorisation':`Bearer ${token}`
       }

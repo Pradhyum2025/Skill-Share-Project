@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import axiosInstance from "../helper/axiosInstance";
 import { fetchSliceAction } from "../store/slices/fetchSlice";
 import toast from "react-hot-toast";
 import authSlice, { authSliceAction } from "../store/slices/authSlice";
@@ -7,7 +8,7 @@ import authSlice, { authSliceAction } from "../store/slices/authSlice";
 export default async function sendOtp(navigate, setOtpFetching, signUpData, resend) {
   try {
     setOtpFetching(()=>true)
-    let res = await axios.post('http://localhost:8080/auth/otp', { email:signUpData.email });
+    let res = await axiosInstance.post('/auth/otp', { email:signUpData.email });
 
     // console.log("SEND OTP RESPONSE ---->>:", res);
 
@@ -30,9 +31,9 @@ export default async function sendOtp(navigate, setOtpFetching, signUpData, rese
 export const signUp = async (navigate, dispatch, signUpData) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.post('http://localhost:8080/auth/signup', signUpData, {
+    const res = await axiosInstance.post('/auth/signup', signUpData, {
       headers: {
-        'Content-Type': 'multipart/form-data', // Axios sets the boundary automatically
+        'Content-Type': 'multipart/form-data', // axiosInstance sets the boundary automatically
       },
     });
     // console.log("SIGNUP RESPONSE ---->>:", res)
@@ -56,7 +57,7 @@ export const signUp = async (navigate, dispatch, signUpData) => {
 export const signIn = async (navigate,dispatch,formData) => {
   try {
     dispatch(fetchSliceAction.serializeFetching());
-    const res = await axios.post('http://localhost:8080/auth/login', formData);
+    const res = await axiosInstance.post('/auth/login', formData);
     dispatch(fetchSliceAction.deserializeFetching());
     if (res.data && res.data.success) {
       // console.log("LOGIN RESPONSE --->>>", res)
@@ -86,7 +87,7 @@ export const updateProfileDetails = async(dispatch,updatedData,token,setIsEditin
   try {
     dispatch(fetchSliceAction.serializeFetching());
     console.log('Hello')
-    const res = await axios.patch(`http://localhost:8080/profile/details`, updatedData, {
+    const res = await axiosInstance.patch(`/profile/details`, updatedData, {
       headers:{
         'Authorisation':`Bearer ${token}`
       }
@@ -114,7 +115,7 @@ export const updateProfileDetails = async(dispatch,updatedData,token,setIsEditin
 export const updateProfileImage = async(dispatch,picData,token,setFetching,setPicture)=>{
   try {
     setFetching(()=>true)
-    const res = await axios.patch(`http://localhost:8080/profile/picture`, picData, {
+    const res = await axiosInstance.patch(`/profile/picture`, picData, {
       headers:{
         'Authorisation':`Bearer ${token}`,
         'Content-Type':'multipart/form-data'
